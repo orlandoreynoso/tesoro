@@ -1,81 +1,42 @@
-<?php 
-
+<?php
 /*
-Template Name: Interiores
- */
-
+  Template Name: Interiores
+  Template Post Type: post, page, product
+*/
  get_header();
-
-
 ?>
-
-
-
-
-<section>
-
-<div class="zerogrid" id="contenido_general">
-<div id="der">
-
-  <div id="titulo">
-    <div class="mapeo"><?php the_breadcrumb(); ?></div>
-  </div>    
-
-  <div id="interiores">
-    <?php  // echo  'estoy en page';      ?>    
-
-<div class="descripcion_categoria">
-    <div id="name_cat">
-      <!-- span>&nbsp;</span -->
-      <!-- a class="cat"><?php the_category (); ?></a -->
-    </div>    
-    <div id="fecha">
-      <span class="icon">&raquo;</span>    
-      <span class="date"><?php the_time('j F, Y'); ?></span>  
-    </div>
-</div>
-
-
-        <!-- h1><?php // the_title(); ?></h1 -->
-         <?php
-          while ( have_posts() ) : the_post();
-//          get_template_part( 'content', 'page' );
-          the_content();           
-          endwhile;
- 
-?>
-<?php // comments_template(); ?>
-<!-- address>Por <?php the_author_posts_link() ?></address -->
-  
-
-  </div>
-
-
-</div>
-<!-- **************************************** -->        
-    <div id="iz">
-        <div id="entradas">
-          <div id="titulo_entradas">
-            <h3>Entradas recientes</h3>
+<section class="con-general">
+  <div class="container">
+     <div class="row">
+          <div class="col-xs-12 col-md-8 con">
+          <div class="interiores">
+            <div class="header-title">
+              <div class="titulo">
+                <div class="mapeo"><?php dimox_breadcrumbs(); ?></div>
+              </div>
+              <div class="titulos-page">
+                <?php the_title(); ?>
+              </div>
+            </div>
+            <?php // echo  'estoy en page';      ?>
+            <?php
+              while ( have_posts() ) : the_post();
+                the_content();
+              endwhile;
+            ?>
           </div>
-
-          <div id="recientes">
-            <?php get_sidebar(); ?>
-          </div>  
+       </div>
+        <div class="col-xs-12 col-md-4 side">
+          <div class="entradas">
+            <div class="titulo_entradas">
+              <h3>Entradas recientes</h3>
+            </div>
+            <div class="recientes">
+              <?php get_sidebar(); ?>
+            </div>
+          </div>
         </div>
     </div>
-    
-       
   </div>
-  
 </section>
-
-
-
-<!-- *********************************************** -->
-
-
-
-
-
 <?php get_footer();  ?>
