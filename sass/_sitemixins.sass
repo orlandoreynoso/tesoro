@@ -1,56 +1,3 @@
-@mixin buscador_cover()
-	.search
-		color: $blanco
-		.searchbar
-			margin: 0px auto
-			display: flex
-			justify-content: center
-			input[type="text"]
-				border: 1px solid $m-verde
-				outline: none
-				transition: 0.5s ease
-				&:hover
-					border: 1px solid $celeste
-			input[type="submit"],
-			button[type="submit"]
-				color: $m-verde
-				transition: 0.5s ease
-				outline: none
-				&:hover
-					color: $celeste
-@mixin entraditas($columnas)
-	.list		
-		width: calc(var(--sizem)/#{$columnas})
-		min-height: 150px
-		text-align: center
-		box-sizing: border-box
-		a
-			color: $m-azul
-			font-family: 'Oswald', sans-serif
-			text-transform: uppercase
-			font-size: 0.9em
-			text-decoration: none
-			padding: 0px 0px 8px 0px
-			display: block
-			background-color: $blanco
-			margin: 10px
-			h3
-				margin-top: 10px
-				display: block
-				font-size: 1.2em
-			&:hover
-				color: $m-rojo
-				transition: 0.5s ease
-				-o-transition: 0.5s ease
-				-webkit-transition: 0.5s ease
-			.thumb
-				img
-					width: 100%
-					height: 178px
-					background-size: cover
-					&:hover
-						transition: 0.5s ease
-						opacity: 0.5
 @mixin tituloafter($tact,$bcol)
 	padding: 10px
 	width: var(--sizem)
@@ -108,7 +55,7 @@
 				font-size: 1.2em
 @mixin m_img()
 	img
-		width: 100%
+		max-width: 100%
 		height: 100%
 		margin: 0px auto
 		text-align: center
@@ -134,11 +81,11 @@
 		max-width: 100%
 		height: auto
 	.alignleft
-		float: left !important
-		margin: 5px 20px 20px 0px
-	.alignright 
-		float: right !important
-		margin: 5px 0px 20px 20px
+		float: left
+		margin: 20px 20px 20px 0px
+	.alignright
+		float: right
+		margin: 20px 0px 20px 20px
 	.aligncenter
 		width: 100%
 		height: auto

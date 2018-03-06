@@ -21,7 +21,7 @@ function get_pastorales($pagina, $perpage){
 
 
        ?>
-    <div class="list">
+    <div class="list col-md-3">
     <div class="todo">
 
       <a class="ir-agrupacion" href="<?php the_permalink(); ?>">

@@ -1,55 +1,78 @@
 <?php
 /*
-Template Name: coverPage mscgt
+Template Name: coverPage Santa rita
  */
 ?>
 <?php get_header(); ?>
+<?php global $post ?>
 
-<div class="sitebienvenida" id="coverbienvenida">
-  <div class="container">
+<div class="slide">
     <div class="row">
       <div class="col-md-12">
-        <div class="slogan">
-          <h1>SANTUARIO</h1>
-          <h2>NUESTRA SEÑORA DEL SAGRADO CORAZÓN</h2>
+        <?php include (TEMPLATEPATH . '/libs/banner.php');   ?>
+      </div>
+    </div>
+</div>
+<section class="section-bienvenida bienvenida_<?php echo $post->post_name; ?>">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 gridx">
+        <div class="i-bienvenida">
+            <h3><?php bloginfo('title'); ?></h3>
         </div>
-        <?php get_template_part('template/cover', 'bienvenidos' ); ?>
+        <?php // get_template_part( 'template/cover','bienvenidos' ); ?>
+        <?php
+          while ( have_posts() ) : the_post();
+            the_content();
+          endwhile;
+        ?>
       </div>
     </div>
   </div>
-</div><!-- Finaliza el div-welcome -->
+</section>
 
-<div class="slide">
-  <?php get_template_part( 'template/cover', 'slide') ?>
+<?php /*ESo es de santa rita*/
+/*
+<section class="m-remodelacion">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <article>
+        <?php get_template_part( 'template/cover','remodelacion' ); ?>
+      </article>
+    </div>
+  </div>
 </div>
+</section>
+*/ ?>
 
-<?php // get_template_part( 'template/cover', 'inicio') ?>
-
-<?php // get_template_part( 'template/cover', 'slide') ?>
-<section class="m-iparroquial m-gris">
-  <?php //get_template_part( 'template/cover', 'infoparroquial') ?>
-  <?php get_template_part( 'template/cover','seleccionariglesia') ?>
+<section class="m-iparroquial infoparroquial_<?php echo $post->post_name; ?>">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <article>
+        <?php include (TEMPLATEPATH . '/libs/infoparroquial.php');  ?>
+      </article>
+    </div>
+  </div>
+</div>
 </section>
 
-<section class="msc10-espiritualidad">
-  <?php get_template_part( 'template/cover', 'espiritualidad'); ?>
+<section class="m-entradas-recientes entradas_<?php echo $post->post_name; ?>">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="titulo-entradas-reciente">
+        <h3>Entradas Recientes</h3>
+      </div>
+      <article class="listado-entradas">
+        <?php get_template_part( 'template/cover','entradasrecientes' ); ?>
+      </article>
+    </div>
+  </div>
+</div>
 </section>
 
-<section class="m-contenido-secciones">
-  <?php get_template_part( 'template/cover', 'contenido') ?>
-</section>
-
-<!-- section class="m-entradas-recientes">
-  <?php // get_template_part( 'template/cover','recomendaciones' ); ?>
-</section -->
-
-<!-- section class="m-entradas-recientes m-gris">
-  <?php // get_template_part( 'template/cover','entradasrecientes' ); ?>
-</section -->
-
-<section class="msc-agrupaciones">
-  <?php get_template_part( 'template/cover', 'agrupaciones') ?>
-</section>
 
 
 <?php get_footer(); ?>
